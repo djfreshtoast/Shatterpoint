@@ -2,7 +2,7 @@ import os
 import discord
 import mysql.connector
 
-DISCORD_TOKEN='MTExNzY1NzU2NjA1OTcwODQ5MA.GUUqO-.zsEUa_sgSMdMwKoOX-qzacEy8CCry7fkOFhwXI'
+DISCORD_TOKEN='NOPE'
 active_channels = ['secret-test', 'randomizer']
 positive_emojis = ['👍', '😀', '👏']
 negative_emojis = ['💩']
@@ -16,10 +16,10 @@ async def on_message(message):
         if message.channel.name not in active_channels:
             return
     mydb = mysql.connector.connect(
-        host="na01-sql.pebblehost.com",
-        user="customer_511588_sprandomizer",
-        password="#TXA4DUHFTTsKlbu7sdg",
-        database="customer_511588_sprandomizer")
+        host="NOPE",
+        user="NOPE",
+        password="NOPE",
+        database="NOPE")
     cursor = mydb.cursor()
     user_args = [message.author.id, message.author.name, message.author.display_name]
     cursor.callproc('insert_new_user_if_not_exists', user_args)
